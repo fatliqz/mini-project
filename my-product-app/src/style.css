@@ -1,0 +1,65 @@
+body {
+  text-align: center;
+  /* background: linear-gradient(125deg, #FEB696, #FEB693, ); */
+  background: black;
+}
+
+.card #prod {
+  /* Add shadows to create the "card" effect */
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  transition: 0.3s;
+  width: 320px;
+  /* text-align: left; */
+  font-size: 15%;
+  margin: 2px;
+  /* text-align: left; */
+  width: 300px;
+  height: 380px;
+  text-align: center;
+  font-size: 5px;
+  border-radius: 5px;
+  /* left: 3rem; */
+}
+
+/* On mouse-over, add a deeper shadow */
+.card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+  transform: scale(1.02);
+}
+
+/* Add some padding inside the card container */
+.container {
+  padding: 2px 16px;
+  width: 100%;
+}
+
+.card-body {
+  width: 280px;
+
+}
+
+img {
+  position: relative;
+  margin-top: 10px;
+
+
+
+}
+
+.btn {
+  margin: 5px;
+}
+
+.text {
+  text-align: right;
+
+}
+
+.bottn {
+  position: relative;
+  right: 20%;
+}
+
+.C {
+  left: 10rem;
+}
