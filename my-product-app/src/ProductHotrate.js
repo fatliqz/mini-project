@@ -6,7 +6,7 @@ import Buy from "./Buyproduct";
 
 
 
-export default function ProductItem(props) {
+export default function HotrateItem(props) {
 
 
     const onDelete = async () => {
@@ -18,8 +18,6 @@ export default function ProductItem(props) {
 
         <>
 
-
-            
                 <div>
                     <div class="card float-start" id="prod" >
                         <div class="img">
@@ -38,10 +36,6 @@ export default function ProductItem(props) {
                         </div>
                     </div>
                 </div>
-        
-
-
-
         </>
     );
 }

@@ -84,7 +84,7 @@ export default function Report() {
     }
 
     const getProducts = async (productTypeId) => {
-        let json = await API_GET("products/type/" + productTypeId);
+        let json = await API_GET("products/types/" + productTypeId);
         setProductStore(json.data);
     }
 

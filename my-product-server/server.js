@@ -175,7 +175,7 @@ app.get("/api/product_types", checkAuth, (req, res) => {
     });
 });
 
-app.get("/api/products/type/:productTypeId", checkAuth, (req, res) => {
+app.get("/api/products/types/:productTypeId", checkAuth, (req, res) => {
     const productTypeId = req.params.productTypeId;
     const sql = "SELECT a.*, b.product_type_name "
         + "FROM products a "
@@ -212,6 +212,66 @@ app.get("/api/products/type/:productTypeId", checkAuth, (req, res) => {
             });;
     }
 });
+
+//  =========== hoterate ==========
+
+app.get("/api/product_types", checkAuth, (req, res) => {
+    const query = "SELECT *Hot_rate FROM product_types";
+
+    pool.query(query, (error, results) => {
+        if (error) {
+            res.json({
+                result: false,
+                message: error.message
+            })
+        } else {
+            res.json({
+                result: true,
+                data: results
+            });
+        }
+    });
+});
+
+app.get("/api/products/type/:Hot_rate", checkAuth, (req, res) => {
+    const Hot_rate = req.params.Hot_rate;
+    const sql = "SELECT a.*, b.product_type_name "
+        + "FROM products a "
+        + "JOIN product_types b ON a.Hot_rate = b.product_type_id ";
+
+    if (Hot_rate == 0) {
+        pool.query(sql, (error, results) => {
+            if (error) {
+                res.json({
+                    result: false,
+                    message: error.message
+                });
+            } else {
+                res.json({
+                    result: true,
+                    data: results
+                });
+            }
+        });
+    } else {
+        pool.query(sql + "WHERE a.Hot_rate = ?",
+            [Hot_rate], (error, results) => {
+                if (error) {
+                    res.json({
+                        result: false,
+                        message: error.message
+                    });
+                } else {
+                    res.json({
+                        result: true,
+                        data: results
+                    });
+                }
+            });;
+    }
+});
+
+// ================ Hot_rate ===============
 
 app.post("/api/product/add", checkAuth, async (req, res) => {
     const input = req.body;

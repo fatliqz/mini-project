@@ -4,6 +4,8 @@ import Modal from 'react-bootstrap/Modal';
 import React, { useState } from 'react';
 
 
+
+
 function Buyproduct(props) {
   
 
@@ -15,15 +17,10 @@ function Buyproduct(props) {
             centered
         >
             <Modal.Header closeButton>
-                <Modal.Title id="contained-modal-title-vcenter" >
-
-                </Modal.Title>
+                
             </Modal.Header>
             <Modal.Body>
-                <h4>THANKS!</h4>
-                <p>
-
-                </p>
+              
             </Modal.Body>
             <Modal.Footer>
                 <Button onClick={props.onHide}>Close</Button>

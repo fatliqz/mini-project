@@ -1,21 +1,12 @@
 import { useEffect, useState } from "react";
 import { Link, Navigate } from "react-router-dom";
 import { API_GET, API_POST } from "./api";
-import ProductItem from "./ProductItem";
+import HotrateItem from "./ProductHotrate";
 import './Home.css'
 import './style.css';
-import { Nav } from "react-bootstrap";
-import Container from 'react-bootstrap/Container';
-
-import Navbar from 'react-bootstrap/Navbar';
-
-import logoimg from './Logomotorcycle04.svg'
-import word from './Logomotorcycle06.svg'
-import HomeHotrate from "./Hotrate";
-import Slideimg from "./Carouselslide";
 
 
-export default function Home() {
+export default function HomeHotrate() {
 
     const [productTypes, setProductTypes] = useState([]);
     const [productTypeId, setProductTypeId] = useState(0);
@@ -24,7 +15,7 @@ export default function Home() {
     useEffect(() => {
         async function fetchData() {
             const response = await fetch(
-                "http://localhost:8080/api/product_types",
+                "http://localhost:8080/api/product_type",
                 {
                     method: "GET",
                     headers: {
@@ -45,7 +36,7 @@ export default function Home() {
     useEffect(() => {
         async function fetchData() {
             const response = await fetch(
-                "http://localhost:8080/api/products/types/" + productTypeId,
+                "http://localhost:8080/api/products/type/" + productTypeId,
                 {
                     method: "GET",
                     headers: {
@@ -82,50 +73,17 @@ export default function Home() {
     if (localStorage.getItem("access_token")) {
         return (
             <>
-                <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
-                    <Container>
-                        <Navbar.Brand href="#home">
-                            <img src={logoimg} width={50} />
-                            <img src={word} width={100} />
-
-                        </Navbar.Brand>
-                        <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-                        <Navbar.Collapse id="responsive-navbar-nav">
-
-                        </Navbar.Collapse>
-                    </Container>
-                </Navbar>
-               
+            
+            {/* <Link to={"/report"} className="btn btn-danger me-3">รายงาน</Link> */}
                 <body id="home">
-                    <div> {Slideimg()}
-                       
-                    </div>
+
+                
 
                     <div className="container-home">
-                        <div className="sidebar">
-                            <div className="sidebar-items" value={productTypeId} onClick={(e) => setProductTypeId(e.target.value)}>
-                                <option value={0}>ALL Product</option>
-                                {
-                                    productTypes.map(item => (
-                                        <option key={item.product_type_id} value={item.product_type_id}>
-                                            {item.product_type_name}
-                                        </option>
-                                    ))
-                                }
-                            </div>
-                            <br></br>
-
-                            <Link to={"/product/add"} className="btn btn-primary me-3">เพิ่ม</Link>
-
-                            <Link to={"/report"} className="btn btn-danger me-3">รายงาน</Link>
-
-                        </div>
-
-                        {/* {HomeHotrate()} */}
-                        <div className="product">
+                        <div className="productHT" id="HT">
                             {
                                 products.map(item => (
-                                    <ProductItem
+                                    <HotrateItem
                                         key={item.product_id}
                                         data={item}
                                         onDelete={onDelete} />
