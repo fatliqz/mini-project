@@ -5,7 +5,6 @@ import HotrateItem from "./ProductHotrate";
 import './Home.css'
 import './style.css';
 
-
 export default function HomeHotrate() {
 
     const [productTypes, setProductTypes] = useState([]);
@@ -72,12 +71,15 @@ export default function HomeHotrate() {
 
     if (localStorage.getItem("access_token")) {
         return (
+
+
             <>
-            
-            {/* <Link to={"/report"} className="btn btn-danger me-3">รายงาน</Link> */}
+                {/* <Link to={"/reportbrand"} className="btn btn-danger me-3">รายงาน</Link> */}
+                {/* <Link to={"/product/add"} className="btn btn-primary me-3">เพิ่ม</Link> */}
+
                 <body id="home">
 
-                
+
 
                     <div className="container-home">
                         <div className="productHT" id="HT">

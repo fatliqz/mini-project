@@ -36,7 +36,7 @@ export const options = {
 
 
 
-export default function Report() {
+export default function Reportbrand() {
     const [isLoading, setIsLoading] = useState(false);
     const [chartData, setChartData] = useState({});
     const [store, setStore] = useState([]);
@@ -45,7 +45,7 @@ export default function Report() {
 
     useEffect(() => {
         async function fetchData() {
-            let json = await API_GET("report");
+            let json = await API_GET("reportbrand");
 
             setStore(json.data);
 
@@ -62,11 +62,9 @@ export default function Report() {
                 labels: labels,
                 datasets: [
                     {
-                        label: "จำนวนสินค้าแยกตามประเภทสินค้า",
+                        label: "จำนวนสินค้าแยกตามBrandสินค้า",
                         data: data,
-                        backgroundColor: "rgba(255, 99, 132, 0.5)",
-                        borderRadius: 5,
-                        borderSkipped: false,
+                        backgroundColor: "rgba(255, 99, 132, 0.5)"
                     }
                 ]
             }
@@ -93,7 +91,7 @@ export default function Report() {
     const getChart = () => {
         if (isLoading) {
             return <Bar options={options} data={chartData}
-                ref={chartRef} onClick={onClick} />;
+                ref={chartRef}  onClick={onClick} />;
         }
 
         return

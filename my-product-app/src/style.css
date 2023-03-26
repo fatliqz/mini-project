@@ -1,7 +1,7 @@
 body {
   text-align: center;
   /* background: linear-gradient(125deg, #FEB696, #FEB693, ); */
-  background: gray;
+  /* background: gray; */
 }
 
 .card #prod {
@@ -20,6 +20,10 @@ body {
   border-radius: 5px;
   /* left: 3rem; */
 
+}
+
+.card #HPD{
+  margin: 5px;
 }
 
 /* On mouse-over, add a deeper shadow */

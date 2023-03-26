@@ -12,7 +12,8 @@ import {
 import Home from './Home';
 import ProductDetail from './ProductDetail';
 import Report from './Report'
-import Hotratedetail from './Hotratedetail';
+import HomeHotrate from './HomeHotrate';
+import Reportbrand from './Reportbrand';
 
 
 ReactDOM.render(
@@ -21,8 +22,9 @@ ReactDOM.render(
       <Route path="/" element={<Login />} />
       <Route path="home" element={<Home />} />
       <Route path="/product/:productId" element={<ProductDetail/>} />
-      {/* <Route path="/product/:productId" element={<Hotratedetail/>} /> */}
       <Route path="report" element={<Report />} />
+      <Route path="reportbrand" element={<Reportbrand />} />
+      <Route path="homehot" element={<HomeHotrate />} />
      
     </Routes>
   </BrowserRouter>,

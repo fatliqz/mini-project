@@ -19,7 +19,7 @@ export default function HotrateItem(props) {
         <>
 
                 <div>
-                    <div class="card float-start" id="prod" >
+                    <div class="card float-start" id="HPD" >
                         <div class="img">
                             <img src={`http://localhost:8080/images/${props.data.image_url}`} width={150} />
                         </div>

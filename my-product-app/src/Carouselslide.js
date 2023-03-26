@@ -3,7 +3,7 @@ import './Casel.css'
 import React from 'react';
 // import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button'
-import HomeHotrate from './Hotrate';
+import HomeHotrate from './HomeHotrate';
 
 
 
@@ -12,28 +12,29 @@ import HomeHotrate from './Hotrate';
 function Slideimg(props) {
 
     const styles = {
-        left: '15rem',
-        hight: '100%',
-        width: '100%',
+
+        height: '430px',
+        width: '93%',
 
     };
     return (
-        <body>
+        <>
 
-            <section class="product">
+            <div style={styles} class="product">
+        
                 <h2 class="product-category">best selling</h2>
-                <button class="pre-btn">5</button>
-                <button class="nxt-btn">5</button>
+                {/* <button class="pre-btn">5</button> */}
+                <button class="nxt-btn"></button>
                 <div class="product-container">
-                    
-                 {HomeHotrate()}
+
+                    {HomeHotrate()}
                 </div>
-                
-            </section>
+
+            </div>
 
             <script src="script.js"></script>
 
-        </body>
+        </>
     );
 }
 

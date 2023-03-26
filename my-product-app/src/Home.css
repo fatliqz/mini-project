@@ -61,7 +61,7 @@ option {
     /* height: max-content; */
     /* margin-left: 10vw; */
     padding: 10px;
-    background: aquamarine;
+    background: aquamarine; 
     /* display: flex; */
 
 }
@@ -70,8 +70,10 @@ option {
     width: 200%;
     /* height: max-content; */
     /* margin-left: 10vw; */
+    /* height: 100px; */
+    /* margin: 5px; */
     padding: 10px;
-    background: aquamarine;
+    /* background: aquamarine; */
     display: flex;
 
 }

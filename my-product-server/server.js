@@ -216,7 +216,7 @@ app.get("/api/products/types/:productTypeId", checkAuth, (req, res) => {
 //  =========== hoterate ==========
 
 app.get("/api/product_types", checkAuth, (req, res) => {
-    const query = "SELECT *Hot_rate FROM product_types";
+    const query = "SELECT Hot_rate FROM product_types";
 
     pool.query(query, (error, results) => {
         if (error) {
@@ -279,7 +279,7 @@ app.post("/api/product/add", checkAuth, async (req, res) => {
     try {
         var result = await Product.createProduct(pool,
             input.product_name, input.product_type_id,
-            input.price, input.mile);
+            input.price, input.stock);
 
         res.json({
             result: true
@@ -319,7 +319,7 @@ app.post("/api/product/update", checkAuth, async (req, res) => {
             input.product_name,
             input.product_type_id,
             input.price,
-            input.mile);
+            input.stock);
 
         res.json({
             result: true
@@ -398,6 +398,25 @@ app.get("/api/report", checkAuth, async (req, res) => {
         });
     }
 });
+
+// =========== roport bannd ===========
+
+app.get("/api/reportbrand", checkAuth, async (req, res) => {
+    try {
+        var result = await Product.getBrandProduct(pool);
+
+        res.json({
+            result: true,
+            data: result
+        });
+    } catch (ex) {
+        res.json({
+            result: false,
+            message: ex.message
+        });
+    }
+});
+
 
 
 

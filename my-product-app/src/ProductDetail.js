@@ -14,7 +14,7 @@ export default function ProductDetail() {
     const [productTypes, setProductTypes] = useState([]);
     const [productTypeId, setProductTypeId] = useState(0);
     const [price, setPrice] = useState(0);
-    const [mile, setmile] = useState(0);
+    const [stock, setStock] = useState(0);
     const [imageUrl, setImageUrl] = useState("");
     const [selectedFile, setSelectedFile] = useState("");
 
@@ -51,7 +51,7 @@ export default function ProductDetail() {
             setProductName(data.product_name);
             setProductTypeId(data.product_type_id);
             setPrice(data.price);
-            setmile(data.mile);
+            setStock(data.stock);
             setImageUrl(data.image_url);
         }
 
@@ -74,7 +74,7 @@ export default function ProductDetail() {
                     product_name: productName,
                     product_type_id: productTypeId,
                     price: price,
-                    mile: mile
+                    stock: stock
                 })
             }
         );
@@ -90,7 +90,7 @@ export default function ProductDetail() {
             product_name: productName,
             product_type_id: productTypeId,
             price: price,
-            mile: mile
+            stock: stock
         });
 
         if (json.result) {

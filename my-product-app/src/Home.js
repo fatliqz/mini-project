@@ -11,7 +11,7 @@ import Navbar from 'react-bootstrap/Navbar';
 
 import logoimg from './Logomotorcycle04.svg'
 import word from './Logomotorcycle06.svg'
-import HomeHotrate from "./Hotrate";
+import HomeHotrate from "./HomeHotrate";
 import Slideimg from "./Carouselslide";
 
 
@@ -95,15 +95,16 @@ export default function Home() {
                         </Navbar.Collapse>
                     </Container>
                 </Navbar>
-               
+
                 <body id="home">
-                    <div> {Slideimg()}
-                       
+                    <div> 
+                        {Slideimg()}
+
                     </div>
 
                     <div className="container-home">
                         <div className="sidebar">
-                            <div className="sidebar-items" value={productTypeId} onClick={(e) => setProductTypeId(e.target.value)}>
+                            {/* <div className="sidebar-items" value={productTypeId} onClick={(e) => setProductTypeId(e.target.value)}>
                                 <option value={0}>ALL Product</option>
                                 {
                                     productTypes.map(item => (
@@ -113,14 +114,24 @@ export default function Home() {
                                     ))
                                 }
                             </div>
-                            <br></br>
-
+                            <br></br> */}
+                            <select value={productTypeId} onChange={(e) => setProductTypeId(e.target.value)}>
+                                <option value={0}>ทุกประเภทสินค้า</option>
+                                {
+                                    productTypes.map(item => (
+                                        <option key={item.product_type_id} value={item.product_type_id}>
+                                            {item.product_type_name}
+                                        </option>
+                                    ))
+                                }
+                            </select>
                             <Link to={"/product/add"} className="btn btn-primary me-3">เพิ่ม</Link>
-
+                            <Link to={"/homehot"} className="btn btn-primary me-3">hot</Link>
                             <Link to={"/report"} className="btn btn-danger me-3">รายงาน</Link>
+                            <Link to={"/reportbrand"} className="btn btn-danger me-3">brandReport</Link>
 
                         </div>
-
+                        
                         {/* {HomeHotrate()} */}
                         <div className="product">
                             {
